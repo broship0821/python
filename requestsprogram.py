@@ -8,11 +8,13 @@ list_ = soup.find("ul", class_="type01")
 # 제목 가져오기
 texts = list_.find_all("dt")
 for text in texts:
-    # print(text.find("a", class_="_sp_each_title"))
-    print(text.a["title"])
+    # title = text.find("a", class_="_sp_each_title")
+    title = text.a["title"]
+print(title)
 # 링크 가져오기
 links = list_.find_all("dd", class_="txt_inline")
-# url = links.find("a", class_="_sp_each_url")
-url = links.a["href"]
-print(links)
-# 링크 가져오기 실패 계속 연구하기
+for link in links:
+    url = link.a["href"]
+print(url)
+
+#맨 마지막꺼만 출력됨
